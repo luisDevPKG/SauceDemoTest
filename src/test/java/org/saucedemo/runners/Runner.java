@@ -7,8 +7,9 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = {
-                "src/test/resources/features/login.feature",
-                "src/test/resources/features/addToCart.feature"
+                //"src/test/resources/features/login.feature",
+                //"src/test/resources/features/addToCart.feature"
+                "src/test/resources/features/checkout.feature"
         },
         glue = "org.saucedemo.stepdefinitions",
         plugin = {"pretty"},
