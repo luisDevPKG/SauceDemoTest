@@ -10,12 +10,12 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 import static org.junit.Assert.assertEquals;
 
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.saucedemo.ui.LoginPage;
 import org.saucedemo.models.User;
 import org.saucedemo.interactions.OpenBrowser;
+import org.saucedemo.tasks.Login;
 import org.saucedemo.questions.ProductPageIsVisible;
 import org.saucedemo.questions.LoginError;
-import org.saucedemo.tasks.Login;
-import org.saucedemo.ui.LoginPage;
 
 public class LoginStepDefinitions {
 

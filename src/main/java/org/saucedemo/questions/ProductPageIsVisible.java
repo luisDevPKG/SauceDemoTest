@@ -1,7 +1,6 @@
 package org.saucedemo.questions;
 
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import org.saucedemo.ui.DisplayProduct;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
