@@ -22,5 +22,6 @@ public class LoginError implements Question<Boolean> {
 
         // Verify that the text is exactly as expected
         String actualMessage = Text.of(LoginPage.ERROR_MESSAGE).answeredBy(actor);
-        return EXPECTED_MESSAGE.equals(actualMessage);    }
+        return EXPECTED_MESSAGE.equals(actualMessage);
+    }
 }

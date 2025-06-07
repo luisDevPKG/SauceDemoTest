@@ -4,19 +4,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import org.saucedemo.interactions.OpenBrowser;
 import org.saucedemo.models.User;
 import org.saucedemo.tasks.AddToCart;
-import org.saucedemo.tasks.Login;
-import org.saucedemo.questions.CartContainsProducts;
+import org.saucedemo.utilities.ReausableSteps;
+import org.saucedemo.utilities.ReusableAssertions;
 
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.assertEquals;
 
 public class AddToCartStepDefinitions {
 
@@ -24,9 +20,11 @@ public class AddToCartStepDefinitions {
 
     @Given("that the user is successfully logged in")
     public void LoginSuccessful()  {
-        theActorCalled("Luis").wasAbleTo(OpenBrowser.onSauceDemoHome(),
-                Login.withCredentials(User.STANDARD)
+        ReausableSteps.userIsLoggedIn(
+                "Luis",
+                User.STANDARD
         );
+        ReusableAssertions.assertUserIsLoggedIn();
     }
 
     @When("you add the products {string} and {string} to the cart")
@@ -39,7 +37,6 @@ public class AddToCartStepDefinitions {
 
     @Then("you should see the products in the cart")
     public void validateProductsInCart() {
-        List<String> actualProducts = theActorInTheSpotlight().asksFor(CartContainsProducts.correctItems(addedProducts));
-        assertEquals("The products in the cart do not match the ones you have added", addedProducts, actualProducts);
+        ReusableAssertions.assertProductsInCart(addedProducts);
     }
 }

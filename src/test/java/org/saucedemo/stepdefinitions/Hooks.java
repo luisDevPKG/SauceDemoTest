@@ -16,9 +16,6 @@ import java.util.Map;
 
 public class Hooks {
 
-    //@Managed(driver = "chrome")
-    //WebDriver driver;
-
     private WebDriver driver;
 
     @Before
