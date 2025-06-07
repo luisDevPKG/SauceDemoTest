@@ -18,6 +18,8 @@ public class Hooks {
     public void setStage() {
         // Automatically configures the correct ChromeDriver
         WebDriverManager.chromedriver().setup();
+        driver.manage().window().maximize();
+
         OnStage.setTheStage(new OnlineCast());
         OnStage.theActorCalled("Luis").can(BrowseTheWeb.with(driver));
     }

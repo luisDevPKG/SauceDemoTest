@@ -1,17 +1,18 @@
 package org.saucedemo.questions;
 
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.saucedemo.ui.DisplayProduct;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-public class ProductPageIsVisible implements Question<Boolean> {
+public class ProductPageIsVisible implements Question<String> {
 
-    public static ProductPageIsVisible is() {
+    public static ProductPageIsVisible value() {
         return new ProductPageIsVisible();
     }
 
     @Override
-    public Boolean answeredBy(Actor actor) {
-        return DisplayProduct.PRODUCT_TITLE.resolveFor(actor).isVisible();
+    public String answeredBy(Actor actor) {
+        return BrowseTheWeb.as(actor).getDriver().getCurrentUrl();
     }
 }
