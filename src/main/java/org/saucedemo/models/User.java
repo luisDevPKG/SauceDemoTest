@@ -5,6 +5,7 @@ public class User {
     private final String username;
     private final String password;
 
+    public static User STANDARD = new User("standard_user", "secret_sauce");
 
     public User(String username, String password) {
         this.username = username;
