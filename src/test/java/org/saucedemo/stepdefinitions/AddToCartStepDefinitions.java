@@ -20,8 +20,10 @@ public class AddToCartStepDefinitions {
 
     @Given("that the user is successfully logged in")
     public void LoginSuccessful()  {
+        ReausableSteps.userIsLoginPage(
+                "Luis"
+        );
         ReausableSteps.userIsLoggedIn(
-                "Luis",
                 User.STANDARD
         );
         ReusableAssertions.assertUserIsLoggedIn();
@@ -29,10 +31,7 @@ public class AddToCartStepDefinitions {
 
     @When("you add the products {string} and {string} to the cart")
     public void addProduct(String product1, String product2) {
-        theActorInTheSpotlight().attemptsTo(
-                AddToCart.toCart(product1,product2)
-        );
-        addedProducts = Arrays.asList(product1, product2);
+        addedProducts =ReausableSteps.userIsLoggedInAndHasProducts(product1, product2);
     }
 
     @Then("you should see the products in the cart")
