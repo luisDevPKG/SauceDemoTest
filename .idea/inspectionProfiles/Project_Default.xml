@@ -6,15 +6,18 @@
       <option name="ignoredModules">
         <list>
           <option value="SauceDemoTest" />
+          <option value="SauceDemoTest" />
         </list>
       </option>
       <option name="ignoredPackages">
         <list>
           <option value="commons-beanutils:commons-beanutils:1.9.4" />
+          <option value="org.jetbrains.kotlin:kotlin-stdlib:1.4.0" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="Not exploitable" />
           <option value="Not exploitable" />
         </list>
       </option>
